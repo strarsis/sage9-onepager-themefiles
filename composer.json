@@ -1,0 +1,21 @@
+{
+    "name": "strarsis/sage9-onepager-themefiles",
+    "description": "Single page support for Sage 9 based themes. (Adopted from WordPress TwentySeventeen theme.)",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "strarsis",
+            "email": "strarsis@gmail.com"
+        }
+    ],
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/strarsis/sage9-onepager-lib"
+        }
+    ],
+    "require": {
+		"strarsis/sage9-onepager-lib": "v1.0.0"
+	}
+}

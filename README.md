@@ -11,9 +11,9 @@ add_action('after_setup_theme', function () {
     \Onepager_Extension_Controls::init();
 });
 
-// ...and for as many page sections as there are currently (published) pages:
+// ...and for as many page sections as there are currently (published) pages minus one (one is usually the front page):
 add_action('after_setup_theme', function () {
-  add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish;});
+  add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish-1;});
 }, 20);
 ````
 

@@ -10,6 +10,11 @@ In `setup.php`:
 add_action('after_setup_theme', function () {
     \Onepager_Extension_Controls::init();
 });
+
+// ...and for as many page sections as there are currently (published) pages:
+add_action('after_setup_theme', function () {
+  add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish;});
+}, 20);
 ````
 
 Pages can be selected in Customizr.

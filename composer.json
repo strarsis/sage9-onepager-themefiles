@@ -2,7 +2,7 @@
     "name": "strarsis/sage9-onepager-themefiles",
     "description": "Single page support for Sage 9 based themes. (Adopted from WordPress Twenty Seventeen theme.)",
     "type": "project",
-    "license": "MIT",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "strarsis",

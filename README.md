@@ -20,6 +20,12 @@ add_action('after_setup_theme', function () {
 add_action('after_setup_theme', function () {
   add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish-1;});
 }, 20);
+
+// ... and for appending the body classes to each panel
+function filter_post_classes( $classes ) {
+	return array_merge($classes, get_body_class());
+}
+add_filter( 'post_class', __NAMESPACE__ . '\\filter_post_classes' );
 ````
 
 Pages can be selected in Customizr.

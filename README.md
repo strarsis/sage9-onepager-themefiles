@@ -13,7 +13,7 @@ $ composer require strarsis/sage9-onepager-lib
 In `setup.php`:
 ```php
 add_action('after_setup_theme', function () {
-    \Onepager_Extension_Controls::init();
+    \strarsis\Sage9Onepager\Controls::init();
 });
 
 // ...and for as many page sections as there are currently (published) pages minus one (one is usually the front page above all the others):

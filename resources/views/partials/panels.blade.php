@@ -15,4 +15,4 @@
       @php $onepagercounter = $i; @endphp
       {!! \strarsis\Sage9Onepager\Controls::front_page_section( null, $i ) !!}
     @endfor
-@endif {{-- The if ( 0 !== onepager_panel_count() ) ends here. --}}
+@endif

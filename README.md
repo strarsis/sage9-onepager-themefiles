@@ -1,4 +1,4 @@
-## Usage
+## Installation
 Helper functions and customizr UI setup have been offloaded to a separate (composer packaged) library 
 [sage9-onepager-lib](https://github.com/strarsis/sage9-onepager-lib).
 
@@ -15,7 +15,11 @@ In `setup.php`:
 add_action('after_setup_theme', function () {
     \strarsis\Sage9Onepager\Controls::init();
 });
+````
 
+## Further customization
+In `setup.php`:
+```php
 // ...and for as many page sections as there are currently (published) pages minus one (one is usually the front page above all the others):
 add_action('after_setup_theme', function () {
   add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish-1;});
@@ -62,8 +66,12 @@ function filter_post_classes( $classes ) {
 add_filter( 'post_class', __NAMESPACE__ . '\\filter_post_classes' );
 ````
 
+## Usage
 Pages can be selected in Customizr.
 Amount of pages can be modified by using the `onepager_front_page_sections` filter (would be added to `setup.php` of theme), like in the originating Twenty Seventeen theme.
+
+## Useful resources
+You can find further useful tips (linking menu items to panels, smooth scrolling) in the related [twentyseventeen-onepage modifications repository](https://github.com/strarsis/twentyseventeen-onepage).
 
 ## Credits
 Code has been adopted from [WordPress Twenty Seventeen theme](https://github.com/WordPress/WordPress/tree/master/wp-content/themes/twentyseventeen).

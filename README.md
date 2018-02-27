@@ -21,9 +21,43 @@ add_action('after_setup_theme', function () {
   add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish-1;});
 }, 20);
 
-// ... and for appending the body classes to each panel
+// ... and for appending the template classes to each panel
+/**
+ * Add classes to post_class()
+ *
+ * @param array $classes array with post classes.
+ *
+ * @return array
+ */
 function filter_post_classes( $classes ) {
-	return array_merge($classes, get_body_class());
+    global $post;
+    $post_id   = $post->ID;
+    $post_type = get_post_type( $post );
+
+    $template_slug  = get_page_template_slug( $post_id );
+    if ( empty($template_slug)/*is_page_template() for $post*/) {
+        $classes[] = "{$post_type}-template-default";
+        return $classes;
+    }
+
+    $classes[] = "{$post_type}-template";
+    $template_parts = explode( '/', $template_slug );
+    foreach ( $template_parts as $part ) {
+        $classes[] = "{$post_type}-template-" .
+                        sanitize_html_class(
+                            str_replace(
+                                array( '.', '/' ), '-',
+                                basename( $part, '.blade.php' )
+                            )
+                        );
+    }
+
+    $classes[] = "{$post_type}-template-" .
+                    sanitize_html_class(
+                        str_replace( '.', '-', $template_slug )
+                    );
+
+    return $classes;
 }
 add_filter( 'post_class', __NAMESPACE__ . '\\filter_post_classes' );
 ````

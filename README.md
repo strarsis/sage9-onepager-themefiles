@@ -5,6 +5,11 @@ Helper functions and customizr UI setup have been offloaded to a separate (compo
 Require the library for the theme (not for the (e.g. Bedrock based) site (`site/`)!),
 see [example `composer.json`](https://github.com/strarsis/sage9-onepager-themefiles/blob/master/composer.json#L12).
 
+In the actual sage9-based theme(!) directory:
+````
+$ composer require strarsis/sage9-onepager-lib
+````
+
 In `setup.php`:
 ```php
 add_action('after_setup_theme', function () {

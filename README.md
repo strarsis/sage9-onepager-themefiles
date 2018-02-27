@@ -71,7 +71,7 @@ Pages can be selected in Customizr.
 Amount of pages can be modified by using the `onepager_front_page_sections` filter (would be added to `setup.php` of theme), like in the originating Twenty Seventeen theme.
 
 ## Useful resources
-You can find further useful tips (linking menu items to panels, smooth scrolling) in the related [twentyseventeen-onepage modifications repository](https://github.com/strarsis/twentyseventeen-onepage).
+You can find further useful tips (linking menu items to panels, smooth scrolling) in the README of related [twentyseventeen-onepage modifications repository](https://github.com/strarsis/twentyseventeen-onepage).
 
 ## Credits
 Code has been adopted from [WordPress Twenty Seventeen theme](https://github.com/WordPress/WordPress/tree/master/wp-content/themes/twentyseventeen).

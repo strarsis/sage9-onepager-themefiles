@@ -73,7 +73,7 @@ function exclude_included_pages_from_xml_sitemap( $url, $type, $object ) {
 }
 add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_from_xml_sitemap', 1, 3 );
 
-// add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false'); // to disable Yoast Sitemap caching for debugging
+// add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false'); // to disable Yoast sitemap caching for debugging
 ````
 
 ## Usage

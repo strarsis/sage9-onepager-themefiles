@@ -51,7 +51,7 @@ function filter_post_classes( $classes ) {
                         sanitize_html_class(
                             str_replace(
                                 array( '.', '/' ), '-',
-                                basename( $part, '.blade.php' )
+                                basename( $part, '.php' )
                             )
                         );
     }

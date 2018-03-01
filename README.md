@@ -65,13 +65,13 @@ function filter_post_classes( $classes ) {
 }
 add_filter( 'post_class', __NAMESPACE__ . '\\filter_post_classes' );
 
-/*
 // ... to exclude all pages on start page from (Yoast) sitemap
 /**
  * Exclude pages on start page from Yoast sitemap
  *
  * @return String|Boolean
  */
+/*
 function exclude_included_pages_from_xml_sitemap( $url, $type, $object ) {
     if(!($type === 'post' and get_post_type($object) === 'page')) return $url;
     if(in_array($object->ID, \strarsis\Sage9Onepager\Controls::panels())) return false; // exclude

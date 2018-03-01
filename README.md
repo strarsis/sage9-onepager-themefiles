@@ -64,6 +64,16 @@ function filter_post_classes( $classes ) {
     return $classes;
 }
 add_filter( 'post_class', __NAMESPACE__ . '\\filter_post_classes' );
+
+// ... to exclude all pages on start page from (Yoast) sitemap
+function exclude_included_pages_from_xml_sitemap( $url, $type, $object ) {
+    if(!($type === 'post' and get_post_type($object) === 'page')) return $url;
+    if(in_array($object->ID, \strarsis\Sage9Onepager\Controls::panels())) return false; // exclude
+    return $url;
+}
+add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_from_xml_sitemap', 1, 3 );
+
+// add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false'); // to disable Yoast Sitemap caching for debugging
 ````
 
 ## Usage

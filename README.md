@@ -81,6 +81,7 @@ add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_fro
 */
 // add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false'); // to disable Yoast sitemap caching for debugging
 
+// ... to redirect from pages assigned to front page to front page
 /**
  * Redirects from pages assigned to front page to front page
  *

@@ -84,7 +84,6 @@ add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_fro
 /**
  * Redirects from pages assigned to front page to front page
  *
- * @return String|Boolean
  */
 /*
 function redirect_included_pages_to_frontpage() {

@@ -80,6 +80,21 @@ function exclude_included_pages_from_xml_sitemap( $url, $type, $object ) {
 add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_from_xml_sitemap', 1, 3 );
 */
 // add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false'); // to disable Yoast sitemap caching for debugging
+
+/**
+ * Redirects from pages assigned to front page to front page
+ *
+ * @return String|Boolean
+ */
+/*
+function redirect_included_pages_to_frontpage() {
+    global $post;
+    if(!in_array($post->ID, \strarsis\Sage9Onepager\Controls::panels())) return;
+    wp_safe_redirect( home_url() );
+    die();
+}
+add_action( 'template_redirect', __NAMESPACE__ . '\\redirect_included_pages_to_frontpage' );
+*/
 ````
 
 ## Usage

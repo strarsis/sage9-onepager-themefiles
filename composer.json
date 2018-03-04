@@ -9,13 +9,7 @@
             "email": "strarsis@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/strarsis/sage9-onepager-lib"
-        }
-    ],
     "require": {
-		"strarsis/sage9-onepager-lib": "v2.1.0"
+		"strarsis/sage9-onepager-lib": "v4.1.0"
 	}
 }

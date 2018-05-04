@@ -89,7 +89,7 @@ add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_fro
 /*
 function redirect_included_pages_to_frontpage() {
     global $post;
-    if(!in_array($post->ID, \strarsis\Sage9Onepager\Controls::panels())) return;
+    if(!isset($post) or !in_array($post->ID, \strarsis\Sage9Onepager\Controls::panels())) return;
     wp_safe_redirect( home_url() );
     die();
 }

@@ -6,7 +6,6 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-
     <div class="home" id="{{ $frontpage_slug }}">
       @include('partials.page-header')
       @include('partials.content-page')

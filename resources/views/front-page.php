@@ -6,7 +6,7 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    <div class="home" id="{{ $frontpage_slug }}">
+    <div id="{{ $frontpage_slug }}" {!! post_class( 'onepager-panel home ' ) !!}>
       @include('partials.page-header')
       @include('partials.content-page')
     </div>

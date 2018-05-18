@@ -12,6 +12,9 @@ $ composer require strarsis/sage9-onepager-lib
 
 In `setup.php`:
 ```php
+/**
+ * Add onepager controls (to Customizr)
+ */
 add_action('after_setup_theme', function () {
     \strarsis\Sage9Onepager\Controls::init();
 });
@@ -21,7 +24,11 @@ add_action('after_setup_theme', function () {
 In `setup.php`:
 ```php
 // ...and for as many page sections as there are currently (published) pages minus one (one is usually the front page above all the others):
+/**
+ * Set maximum amount of onepager page sections
+ */
 add_action('after_setup_theme', function () {
+  // count of currently (published) pages minus one (one is usually the front page above all the others)
   add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish-1;});
 }, 20);
 

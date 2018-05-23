@@ -7,8 +7,10 @@
 @section('content')
   @while(have_posts()) @php(the_post())
     <article id="{{ $frontpage_slug }}" {!! post_class( 'onepager-panel home ' ) !!}>
-      @include('partials.page-header')
-      @include('partials.content-page')
+      <div class="panel-content">
+        @include('partials.page-header')
+        @include('partials.content-page')
+      </div>
     </article>
 
     @include('partials.panels')

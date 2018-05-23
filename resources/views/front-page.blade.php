@@ -6,10 +6,10 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    <div id="{{ $frontpage_slug }}" {!! post_class( 'onepager-panel home ' ) !!}>
+    <article id="{{ $frontpage_slug }}" {!! post_class( 'onepager-panel home ' ) !!}>
       @include('partials.page-header')
       @include('partials.content-page')
-    </div>
+    </article>
 
     @include('partials.panels')
   @endwhile

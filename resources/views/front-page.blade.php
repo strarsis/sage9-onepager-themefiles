@@ -9,6 +9,8 @@
     <article id="{{ $frontpage_slug }}" {!! post_class( 'onepager-panel home ' ) !!}>
       <div class="panel-content">
         @include('partials.page-header')
+        @php \strarsis\Sage9Onepager\Controls::edit_link( get_the_ID() ) @endphp
+
         @include('partials.content-page')
       </div>
     </article>

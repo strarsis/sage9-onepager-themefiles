@@ -101,7 +101,6 @@ add_filter( 'post_class', __NAMESPACE__ . '\\panel_post_classes' );
 
 // ... and for skipping body classes on front page body
 //     because the front page content is added as panel above the other panels
-
 /* Remove template classes from front page body class */
 function panels_front_page_body_class(array $classes) {
     if(!is_front_page()) return $classes; // skip

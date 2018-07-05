@@ -32,22 +32,13 @@ add_action('after_setup_theme', function () {
   add_filter( 'onepager_front_page_sections',function(){return wp_count_posts('page')->publish-1;});
 }, 20);
 
-// ... and for appending the template classes to each panel
-/**
- * Add classes to post_class()
- *
- * @param array $classes array with post classes.
- *
- * @return array
- */
-function panel_post_classes( $classes ) {
-    global $post;
-    $post_id   = $post->ID;
-    $post_type = get_post_type( $post );
 
-    /** Add body class-like classes to post */
+// ... and for appending the template classes to each panel
+function post_template_classes( $post_id) {
+    $post_type = get_post_type( $post_id );
     $template_slug  = get_page_template_slug( $post_id );
-    if ( empty($template_slug)/*is_page_template() for $post*/) {
+
+    if ( empty($template_slug) /*is_page_template() equivalent for $post*/ ) {
         $classes[] = "{$post_type}-template-default";
         return $classes;
     }
@@ -69,19 +60,59 @@ function panel_post_classes( $classes ) {
                         str_replace( '.', '-', $template_slug )
                     );
 
+    return blade_clean_classnames($classes);
+}
+
+function post_body_classes( $post_id ) {
+    $classes = post_template_classes( $post_id );
+
     /** Add page slug if it doesn't exist */
     if (!in_array(basename(get_permalink($post_id)), $classes)) {
         $classes[] = basename(get_permalink($post_id));
     }
 
-    /** Clean up class names for custom templates */
+    return $classes;
+}
+
+/** Clean up class names for custom templates */
+function blade_clean_classnames( $classes) {
     $classes = array_map(function ($class) {
         return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);
     }, $classes);
 
     return array_filter($classes);
 }
+
+/**
+ * Add classes to post_class()
+ *
+ * @param array $classes array with post classes.
+ *
+ * @return array
+ */
+function panel_post_classes( $classes ) {
+    global $post;
+    return blade_clean_classnames(
+        array_merge($classes, post_body_classes($post->ID))
+    );
+}
 add_filter( 'post_class', __NAMESPACE__ . '\\panel_post_classes' );
+
+
+// ... and for skipping body classes on front page body
+//     because the front page content is added as panel above the other panels
+
+/* Remove template classes from front page body class */
+function panels_front_page_body_class(array $classes) {
+    if(!is_front_page()) return $classes; // skip
+
+    $template_classes = post_body_classes(get_the_ID());
+    return blade_clean_classnames(
+        array_diff($classes, $template_classes)
+    );
+}
+add_filter('body_class', __NAMESPACE__ . '\\panels_front_page_body_class', 100 );
+
 
 // ... to exclude all pages on start page from (Yoast) sitemap
 /**
@@ -98,6 +129,7 @@ function exclude_included_pages_from_xml_sitemap( $url, $type, $object ) {
 add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\exclude_included_pages_from_xml_sitemap', 1, 3 );
 */
 // add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false'); // to disable Yoast sitemap caching for debugging
+
 
 // ... to redirect from pages assigned to front page to front page
 /**

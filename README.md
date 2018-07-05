@@ -40,11 +40,12 @@ add_action('after_setup_theme', function () {
  *
  * @return array
  */
-function filter_post_classes( $classes ) {
+function panel_post_classes( $classes ) {
     global $post;
     $post_id   = $post->ID;
     $post_type = get_post_type( $post );
 
+    /** Add body class-like classes to post */
     $template_slug  = get_page_template_slug( $post_id );
     if ( empty($template_slug)/*is_page_template() for $post*/) {
         $classes[] = "{$post_type}-template-default";
@@ -68,9 +69,19 @@ function filter_post_classes( $classes ) {
                         str_replace( '.', '-', $template_slug )
                     );
 
-    return $classes;
+    /** Add page slug if it doesn't exist */
+    if (!in_array(basename(get_permalink($post_id)), $classes)) {
+        $classes[] = basename(get_permalink($post_id));
+    }
+
+    /** Clean up class names for custom templates */
+    $classes = array_map(function ($class) {
+        return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);
+    }, $classes);
+
+    return array_filter($classes);
 }
-add_filter( 'post_class', __NAMESPACE__ . '\\filter_post_classes' );
+add_filter( 'post_class', __NAMESPACE__ . '\\panel_post_classes' );
 
 // ... to exclude all pages on start page from (Yoast) sitemap
 /**

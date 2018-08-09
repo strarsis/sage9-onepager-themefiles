@@ -20,6 +20,8 @@ add_action('after_setup_theme', function () {
 });
 ````
 
+Copy the few blade files in this repository in [resources/views](https://github.com/strarsis/sage9-onepager-themefiles/tree/master/resources/views) into the theme.
+
 ## Further customization
 In `setup.php`:
 ```php

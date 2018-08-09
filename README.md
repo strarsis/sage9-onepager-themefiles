@@ -5,11 +5,13 @@ Helper functions and customizr UI setup have been offloaded to a separate (compo
 Require the library for the theme (not for the (e.g. Bedrock based) site (`site/`)!),
 see [example `composer.json`](https://github.com/strarsis/sage9-onepager-themefiles/blob/master/composer.json#L12).
 
+1. Install the helper library
 In the actual sage9-based theme(!) directory:
 ````
 $ composer require strarsis/sage9-onepager-lib
 ````
 
+2. Require the helper library
 In `setup.php`:
 ```php
 /**
@@ -20,9 +22,9 @@ add_action('after_setup_theme', function () {
 });
 ````
 
-Copy the few blade files in this repository in [resources/views](https://github.com/strarsis/sage9-onepager-themefiles/tree/master/resources/views) into the theme.
+3. Copy the theme blade files in this repository from [resources/views](https://github.com/strarsis/sage9-onepager-themefiles/tree/master/resources/views) to the theme.
 
-## Further customization
+## Further customizations
 In `setup.php`:
 ```php
 // ...and for as many page sections as there are currently (published) pages minus one (one is usually the front page above all the others):

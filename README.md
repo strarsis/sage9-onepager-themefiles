@@ -159,3 +159,7 @@ You can find further useful tips (linking menu items to panels, smooth scrolling
 
 ## Credits
 Code has been adopted from [WordPress Twenty Seventeen theme](https://github.com/WordPress/WordPress/tree/master/wp-content/themes/twentyseventeen).
+
+## More than one page with multiple sections?
+For more than one page with multiple sections, [Mesh](https://github.com/linchpin/mesh) can be used.
+[Gutenberg](https://github.com/WordPress/gutenberg) could also be an option, also [Gutenblock support is planned for Mesh](https://github.com/linchpin/mesh/issues/209).

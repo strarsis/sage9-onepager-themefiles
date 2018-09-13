@@ -158,8 +158,7 @@ Amount of pages can be modified by using the `onepager_front_page_sections` filt
 You can find further useful tips (linking menu items to panels, smooth scrolling) in the README of related [twentyseventeen-onepage modifications repository](https://github.com/strarsis/twentyseventeen-onepage).
 
 ## Multilanguage
-Tested with [Polylang plugin](https://wordpress.org/plugins/polylang/):
-Translation of pages selected to be shown on front page are correctly switched to the selected language.
+Support for translation plugins Polylang and WPML have been added.
 
 ## Credits
 Code has been adopted from [WordPress Twenty Seventeen theme](https://github.com/WordPress/WordPress/tree/master/wp-content/themes/twentyseventeen).

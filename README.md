@@ -68,7 +68,7 @@ Allows to change the (maximum) amount of page section selection in page panel.
 You can find further useful tips (linking menu items to panels, smooth scrolling) in the README of related [twentyseventeen-onepage modifications repository](https://github.com/strarsis/twentyseventeen-onepage).
 
 ## Multilanguage
-Support for translation plugins Polylang and WPML have been added.
+Support for translation plugins Polylang and WPML has been added.
 
 ## Credits
 Code has been adopted from [WordPress Twenty Seventeen theme](https://github.com/WordPress/WordPress/tree/master/wp-content/themes/twentyseventeen).

@@ -35,7 +35,8 @@ In `setup.php`:
 add_action('after_setup_theme', '\strarsis\Sage9Onepager\Controls::init');
 
 
-// ... and for as many page sections as there are currently (published) pages minus one (one is usually the front page above all the others)
+// ... and for as many page sections as there are currently (published) pages 
+//     minus one (one is usually the front page above all the others)
 add_filter( 'onepager_front_page_sections', '\strarsis\Sage9Onepager\Helpers::default_front_page_sections' );
 
 // ... and for appending the template classes to each panel

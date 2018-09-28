@@ -32,10 +32,10 @@ In `setup.php`:
  */
 
 // Add onepager controls (to Customizr)
-add_action('after_setup_theme', '\strarsis\Sage9Onepager\Controls::init');
+add_action( 'after_setup_theme', '\strarsis\Sage9Onepager\Controls::init' );
 
 
-// ... and for as many page sections as there are currently (published) pages 
+// ... and for as many page sections as there are currently (published) pages
 //     minus one (one is usually the front page above all the others)
 add_filter( 'onepager_front_page_sections', '\strarsis\Sage9Onepager\Helpers::default_front_page_sections' );
 
@@ -44,17 +44,16 @@ add_filter( 'post_class', '\strarsis\Sage9Onepager\Helpers::panel_post_classes' 
 
 // ... and for skipping body classes on front page body
 //     because the front page content is added as panel above the other panels
-add_filter( 'body_class', '\strarsis\Sage9Onepager\Helpers::panels_front_page_body_class' );
+add_filter( 'body_class', '\strarsis\Sage9Onepager\Helpers::panels_front_page_body_class', 100 );
 
 
 // ... to  exclude all pages on start page from (Yoast) sitemap
 add_filter( 'wpseo_sitemap_entry', '\strarsis\Sage9Onepager\Helpers::exclude_included_pages_from_xml_sitemap', 1, 3 );
 // ... to  disable Yoast sitemap caching for debugging
-// add_filter('wpseo_enable_xml_sitemap_transient_caching', '__return_false');
+add_filter( 'wpseo_enable_xml_sitemap_transient_caching', '__return_false' );
 
 // ... to  redirect from pages assigned to front page to front page
 add_action( 'template_redirect', '\strarsis\Sage9Onepager\Helpers::redirect_included_pages_to_frontpage' );
-
 ````
 
 ## Usage

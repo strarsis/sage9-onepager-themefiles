@@ -46,7 +46,7 @@ add_filter( 'body_class', '\strarsis\Sage9Onepager\Helpers::panels_front_page_bo
 // ... to  exclude all pages on start page from (Yoast) sitemap
 add_filter( 'wpseo_sitemap_entry', '\strarsis\Sage9Onepager\Helpers::exclude_included_pages_from_xml_sitemap', 1, 3 );
 // ... to  disable Yoast sitemap caching for debugging
-add_filter( 'wpseo_enable_xml_sitemap_transient_caching', '__return_false' );
+//add_filter( 'wpseo_enable_xml_sitemap_transient_caching', '__return_false' );
 
 // ... to  redirect from pages assigned to front page to front page
 add_action( 'template_redirect', '\strarsis\Sage9Onepager\Helpers::redirect_included_pages_to_frontpage' );

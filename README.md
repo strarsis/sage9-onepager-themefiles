@@ -14,12 +14,8 @@ $ composer require strarsis/sage9-onepager-lib
 2. Require the helper library
 In `setup.php`:
 ```php
-/**
- * Add onepager controls (to Customizr)
- */
-add_action('after_setup_theme', function () {
-    \strarsis\Sage9Onepager\Controls::init();
-});
+// Add onepager controls (to Customizr)
+add_action( 'after_setup_theme', '\strarsis\Sage9Onepager\Controls::init' );
 ````
 
 3. Copy the theme blade files in this repository from [resources/views](https://github.com/strarsis/sage9-onepager-themefiles/tree/master/resources/views) to the theme.
@@ -55,6 +51,7 @@ add_filter( 'wpseo_enable_xml_sitemap_transient_caching', '__return_false' );
 // ... to  redirect from pages assigned to front page to front page
 add_action( 'template_redirect', '\strarsis\Sage9Onepager\Helpers::redirect_included_pages_to_frontpage' );
 ````
+You can also just copy and adjust the code for the filter/action handlers in the [Helpers class](https://github.com/strarsis/sage9-onepager-lib/blob/master/Helpers.php).
 
 ## Usage
 Pages can be selected in Customizr.

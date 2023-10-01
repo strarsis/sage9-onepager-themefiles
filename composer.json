@@ -10,6 +10,6 @@
         }
     ],
     "require": {
-		"strarsis/sage9-onepager-lib": "v4.1.0"
+		"strarsis/sage9-onepager-lib": "^5.0.0"
 	}
 }

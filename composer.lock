@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1bfe31e58d876804bf77b0d9c5335bf3",
+    "packages": [
+        {
+            "name": "strarsis/sage9-onepager-lib",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/strarsis/sage9-onepager-lib.git",
+                "reference": "2023fdf39d850420d7fbb812dd61898bc396e732"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/strarsis/sage9-onepager-lib/zipball/2023fdf39d850420d7fbb812dd61898bc396e732",
+                "reference": "2023fdf39d850420d7fbb812dd61898bc396e732",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0 || ^8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "strarsis\\Sage9Onepager\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "strarsis",
+                    "email": "strarsis@gmail.com"
+                }
+            ],
+            "description": "Single page support for Sage 9 based themes. – Helper library (Adopted from WordPress Twenty Seventeen theme.)",
+            "support": {
+                "issues": "https://github.com/strarsis/sage9-onepager-lib/issues",
+                "source": "https://github.com/strarsis/sage9-onepager-lib/tree/v5.0.0"
+            },
+            "time": "2023-10-01T01:33:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
